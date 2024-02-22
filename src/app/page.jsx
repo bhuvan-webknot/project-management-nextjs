@@ -2,12 +2,12 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import bgPic from "../../public/vercel.svg";
 import { Montserrat } from "next/font/google";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { EyeClosedIcon, EyeOpenIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
+
 const mont = Montserrat({ subsets: ["latin"] });
 export default function Home() {
   const [email, setEmail] = React.useState("");
