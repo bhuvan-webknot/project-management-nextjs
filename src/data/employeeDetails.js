@@ -1,7 +1,7 @@
 const employee = [
   {
     id: 1,
-    name: "Bhuvan S",
+    name: "Bhafdf",
     email: "bhuvan.s@webknot.in",
     phone: "12345567789",
     role: "Software Development Intern",
@@ -48,61 +48,70 @@ const employee = [
     email: "bhuvan.s@webknot.in",
     phone: "12345567789",
     role: "Software Development Intern",
-  },{
+  },
+  {
     id: 6,
     name: "Bhuvan S",
     email: "bhuvan.s@webknot.in",
     phone: "12345567789",
     role: "Software Development Intern",
-  },{
+  },
+  {
     id: 6,
     name: "Bhuvan S",
     email: "bhuvan.s@webknot.in",
     phone: "12345567789",
     role: "Software Development Intern",
-  },{
+  },
+  {
     id: 6,
     name: "Bhuvan S",
     email: "bhuvan.s@webknot.in",
     phone: "12345567789",
     role: "Software Development Intern",
-  },{
+  },
+  {
     id: 6,
     name: "Bhuvan S",
     email: "bhuvan.s@webknot.in",
     phone: "12345567789",
     role: "Software Development Intern",
-  },{
+  },
+  {
     id: 6,
     name: "Bhuvan S",
     email: "bhuvan.s@webknot.in",
     phone: "12345567789",
     role: "Software Development Intern",
-  },{
+  },
+  {
     id: 6,
     name: "Bhuvan S",
     email: "bhuvan.s@webknot.in",
     phone: "12345567789",
     role: "Software Development Intern",
-  },{
+  },
+  {
     id: 6,
     name: "Bhuvan S",
     email: "bhuvan.s@webknot.in",
     phone: "12345567789",
     role: "Software Development Intern",
-  },{
+  },
+  {
     id: 6,
     name: "Bhuvan S",
     email: "bhuvan.s@webknot.in",
     phone: "12345567789",
     role: "Software Development Intern",
-  },{
+  },
+  {
     id: 6,
     name: "Bhuvan S",
     email: "bhuvan.s@webknot.in",
     phone: "12345567789",
     role: "Software Development Intern",
-  },  
+  },
 ];
 
 module.exports = employee;
