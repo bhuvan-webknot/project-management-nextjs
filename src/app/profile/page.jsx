@@ -16,14 +16,16 @@ import React from "react";
 export default function Profile() {
   const [cemail, setcEmail] = React.useState("bhuvan.s@webknot.in");
   const [crole, setcRole] = React.useState("Software Devlopment Intern");
-  const [cfirstName, setcFirstname] = React.useState("Bhuvan");
-  const [clastName, setcLastname] = React.useState("S");
+  const [cName, setcName] = React.useState("Bhuvan");
   const [cphoneNumber, setcPhonenumber] = React.useState("123456789");
   return (
     <>
       <main>
         <Navbar />
-        <div className="flex flex-col items-center justify-center h-screen w-full">
+        <div
+          className="flex flex-col items-center justify-center  align-middle w-full"
+          style={{ minHeight: "calc(100vh - 4rem)" }}
+        >
           <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 pt-10 pb-10">
             <div class="flex flex-col items-center">
               <h5 class="mb-2 text-2xl font-medium text-gray-900 dark:text-white">
@@ -38,6 +40,7 @@ export default function Profile() {
               <span class="text-sm text-gray-500 dark:text-gray-400">
                 123456789
               </span>
+
               <div class="flex mt-4 md:mt-6">
                 <Dialog>
                   <DialogTrigger asChild>
@@ -56,23 +59,12 @@ export default function Profile() {
                     <div className="grid gap-4 py-4">
                       <div className="grid grid-cols-4 items-center gap-4">
                         <Label htmlFor="name" className="text-right">
-                          First Name
+                          Name
                         </Label>
                         <Input
                           id="firstname"
-                          value={cfirstName}
-                          onChange={(e) => setcFirstname(e.target.value)}
-                          className="col-span-3"
-                        />
-                      </div>
-                      <div className="grid grid-cols-4 items-center gap-4">
-                        <Label htmlFor="username" className="text-right">
-                          Last Name
-                        </Label>
-                        <Input
-                          id="lastname"
-                          value={clastName}
-                          onChange={(e) => setcLastname(e.target.value)}
+                          value={cName}
+                          onChange={(e) => setcName(e.target.value)}
                           className="col-span-3"
                         />
                       </div>

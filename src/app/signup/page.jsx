@@ -12,8 +12,7 @@ export default function Signup() {
   const [showPassword, setShowPassword] = React.useState(false);
   const [inputEmail, setInputEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const [firstName, setFirstName] = React.useState("");
-  const [lastName, setLastName] = React.useState("");
+  const [name, setName] = React.useState("");
   const [role, setRole] = React.useState("");
   return (
     <>
@@ -41,6 +40,26 @@ export default function Signup() {
               style={{ padding: "3% 23%", width: "100%" }}
               className="forms text-left flex flex-col justify-center align-middle"
             >
+              <Input
+                type="text"
+                className="px-4 py-6 mt-1 mb-2"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                id="name"
+                name="name"
+                placeholder="Enter your Name"
+              />
+              <Input
+                type="text"
+                className="px-4 py-6 mt-1 mb-2"
+                value={role}
+                onChange={(e) => setRole(e.target.value)}
+                required
+                id="roles"
+                name="roles"
+                placeholder="Enter your role"
+              />
               <Input
                 type="email"
                 className="px-4 py-6 mt-2 mb-2"
@@ -76,36 +95,6 @@ export default function Signup() {
                   />
                 )}
               </div>
-              <Input
-                type="text"
-                className="px-4 py-6 mt-1 mb-2"
-                required
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                id="firstname"
-                name="firstname"
-                placeholder="Enter First Name"
-              />
-              <Input
-                type="text"
-                className="px-4 py-6 mt-1 mb-2"
-                required
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-                id="lastname"
-                name="lastname"
-                placeholder="Enter Last Name"
-              />
-              <Input
-                type="text"
-                className="px-4 py-6 mt-1 mb-2"
-                value={role}
-                onChange={(e) => setRole(e.target.value)}
-                required
-                id="roles"
-                name="roles"
-                placeholder="Enter your role"
-              />
 
               <Button className="mt-5">Sign-up</Button>
             </div>
