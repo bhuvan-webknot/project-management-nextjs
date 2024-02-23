@@ -54,8 +54,8 @@ export default function TimesheetPage() {
               <DialogHeader>
                 <DialogTitle>Edit</DialogTitle>
                 <DialogDescription>
-                  Make changes to your timesheet here. Click save when you're
-                  done.
+                  Make changes to your timesheet here. Click save when
+                  you&apos;re done.
                 </DialogDescription>
               </DialogHeader>
               <div className="grid gap-4 py-4">
@@ -125,9 +125,9 @@ export default function TimesheetPage() {
             <option className="bg-gray-900" value="Select Employee">
               Select Employee
             </option>
-            {employeeDetails.map((ele) => {
+            {employeeDetails.map((ele, index) => {
               return (
-                <option className="bg-gray-900" value={ele.name}>
+                <option key={index} className="bg-gray-900" value={ele.name}>
                   {ele.name}
                 </option>
               );
@@ -167,7 +167,7 @@ export default function TimesheetPage() {
                         <DialogTitle>Edit</DialogTitle>
                         <DialogDescription>
                           Make changes to your timesheet here. Click save when
-                          you're done.
+                          you&apos;re done.
                         </DialogDescription>
                       </DialogHeader>
                       <div className="grid gap-4 py-4">

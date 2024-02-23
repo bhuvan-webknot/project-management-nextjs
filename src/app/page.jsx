@@ -101,7 +101,7 @@ export default function Home() {
           </form>
 
           <p>
-            Don't have an account ?{" "}
+            Don&apos;t have an account ?{" "}
             <span className="ml-2 text-purple-500 cursor-pointer font-semibold">
               <Link href="/signup">Sign up</Link>
             </span>

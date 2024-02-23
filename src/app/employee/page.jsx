@@ -65,7 +65,7 @@ export default function EmployeePage() {
                         <DialogTitle>Edit profile</DialogTitle>
                         <DialogDescription>
                           Make changes to your profile here. Click save when
-                          you're done.
+                          you are done.
                         </DialogDescription>
                       </DialogHeader>
                       <div className="grid gap-4 py-4">
