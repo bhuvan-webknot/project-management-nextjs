@@ -5,11 +5,17 @@ import Image from "next/image";
 import { Montserrat } from "next/font/google";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { useRouter } from "next/navigation";
 import { EyeClosedIcon, EyeOpenIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 
 const mont = Montserrat({ subsets: ["latin"] });
 export default function Home() {
+  const router = useRouter();
+  function signUpHandler(e) {
+    e.preventDefault();
+    router.push("/profile");
+  }
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [showPassword, setShowPassword] = React.useState(false);
@@ -38,7 +44,7 @@ export default function Home() {
           <p className={mont.className}>
             Enter your Email and password to access this account
           </p>
-          <form>
+          <form onSubmit={signUpHandler}>
             <div
               style={{ padding: "7% 23%", width: "100%" }}
               className="forms text-left flex flex-col justify-center align-middle"
@@ -88,7 +94,9 @@ export default function Home() {
               <a className="hover:text-purple-400 text-sm cursor-pointer text-slate-400 font-semibold">
                 Forgot Password ?
               </a>
-              <Button className="mt-5">Login</Button>
+              <Button type="submit" className="mt-5">
+                Login
+              </Button>
             </div>
           </form>
 
