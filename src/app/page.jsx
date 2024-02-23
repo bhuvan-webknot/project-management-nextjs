@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
 import { EyeClosedIcon, EyeOpenIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
+import Head from "next/head";
 
 const mont = Montserrat({ subsets: ["latin"] });
 export default function Home() {
@@ -21,6 +22,9 @@ export default function Home() {
   const [showPassword, setShowPassword] = React.useState(false);
   return (
     <>
+      <Head>
+        <title>Login !!</title>
+      </Head>
       <main className="flex flex-col md:flex-row h-screen entryPage">
         <div
           style={{ width: "40%" }}
