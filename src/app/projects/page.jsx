@@ -33,7 +33,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import projectDetails from "@/data/projectDetails";
-import employeeDetails from "@/data/employeeDetails";
+import { PlusIcon } from "@radix-ui/react-icons";
 
 export default function ProjectsPage() {
   const [projectName, setProjectName] = React.useState("");
@@ -120,26 +120,43 @@ export default function ProjectsPage() {
                   className="col-span-3"
                 />
               </div>
-
-              <div className="grid grid-cols-4 items-center gap-3  ">
-                <Label htmlFor="Category" className="text-right">
-                  Employee
-                </Label>
-                <Input></Input>
-                <Label htmlFor="Category" className="text-right">
-                  Role
-                </Label>
-                <DropdownMenu>
-                  <DropdownMenuTrigger className="text-sm py-1 px-1 border border-gray-300 rounded">
-                    Select Role
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    <DropdownMenuItem>Manager</DropdownMenuItem>
-                    <DropdownMenuItem>Lead</DropdownMenuItem>
-                    <DropdownMenuItem>Developer</DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              </div>
+              {inputFields.map((input, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="grid grid-cols-4 items-center gap-3  "
+                  >
+                    <Label htmlFor="Category" className="text-right">
+                      Employee
+                    </Label>
+                    <Input
+                      value={input.employeeName}
+                      label="Employee"
+                      onChange={(event) => handleFormChange(index, event)}
+                    />
+                    <Label htmlFor="Category" className="text-right">
+                      Role
+                    </Label>
+                    <DropdownMenu
+                      value={input.role}
+                      onChange={(event) => handleFormChange(index, event)}
+                    >
+                      <DropdownMenuTrigger className="text-sm py-1 px-1 border border-gray-300 rounded">
+                        Select Role
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent>
+                        <DropdownMenuItem>Manager</DropdownMenuItem>
+                        <DropdownMenuItem>Lead</DropdownMenuItem>
+                        <DropdownMenuItem>Developer</DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </div>
+                );
+              })}
+              <Button onClick={addFields}>
+                <PlusIcon className="mr-3" />
+                Add
+              </Button>
             </div>
             <DialogFooter>
               <Button type="submit">Save changes</Button>
@@ -215,25 +232,47 @@ export default function ProjectsPage() {
                           />
                         </div>
 
-                        <div className="grid grid-cols-4 items-center gap-3  ">
-                          <Label htmlFor="Category" className="text-right">
-                            Employee
-                          </Label>
-                          <Input></Input>
-                          <Label htmlFor="Category" className="text-right">
-                            Role
-                          </Label>
-                          <DropdownMenu>
-                            <DropdownMenuTrigger className="text-sm py-1 px-1 border border-gray-300 rounded">
-                              Select Role
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent>
-                              <DropdownMenuItem>Manager</DropdownMenuItem>
-                              <DropdownMenuItem>Lead</DropdownMenuItem>
-                              <DropdownMenuItem>Developer</DropdownMenuItem>
-                            </DropdownMenuContent>
-                          </DropdownMenu>
-                        </div>
+                        {inputFields.map((input, index) => {
+                          return (
+                            <div
+                              key={index}
+                              className="grid grid-cols-4 items-center gap-3  "
+                            >
+                              <Label htmlFor="Category" className="text-right">
+                                Employee
+                              </Label>
+                              <Input
+                                value={input.employeeName}
+                                label="Employee"
+                                onChange={(event) =>
+                                  handleFormChange(index, event)
+                                }
+                              />
+                              <Label htmlFor="Category" className="text-right">
+                                Role
+                              </Label>
+                              <DropdownMenu
+                                value={input.role}
+                                onChange={(event) =>
+                                  handleFormChange(index, event)
+                                }
+                              >
+                                <DropdownMenuTrigger className="text-sm py-1 px-1 border border-gray-300 rounded">
+                                  Select Role
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent>
+                                  <DropdownMenuItem>Manager</DropdownMenuItem>
+                                  <DropdownMenuItem>Lead</DropdownMenuItem>
+                                  <DropdownMenuItem>Developer</DropdownMenuItem>
+                                </DropdownMenuContent>
+                              </DropdownMenu>
+                            </div>
+                          );
+                        })}
+                        <Button onClick={addFields}>
+                          <PlusIcon className="mr-3" />
+                          Add
+                        </Button>
                       </div>
                       <DialogFooter>
                         <Button type="submit">Save changes</Button>

@@ -6,14 +6,21 @@ import { Montserrat } from "next/font/google";
 import { Input } from "@/components/ui/input";
 import { EyeOpenIcon, EyeClosedIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 const mont = Montserrat({ subsets: ["latin"] });
 
 export default function Signup() {
+  const router = useRouter();
   const [showPassword, setShowPassword] = React.useState(false);
   const [inputEmail, setInputEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [name, setName] = React.useState("");
   const [role, setRole] = React.useState("");
+
+  function signUpHandler(e) {
+    e.preventDefault();
+    router.push("/profile");
+  }
   return (
     <>
       <main className="flex w-full h-screen flex-col md:flex-row entryPage">
@@ -35,7 +42,7 @@ export default function Signup() {
         >
           <h1 className="text-3xl font-bold text-slate-400 mb-2">Sign up</h1>
           <p className={mont.className}>Enter all the below details</p>
-          <form>
+          <form onSubmit={signUpHandler}>
             <div
               style={{ padding: "3% 23%", width: "100%" }}
               className="forms text-left flex flex-col justify-center align-middle"
@@ -96,7 +103,9 @@ export default function Signup() {
                 )}
               </div>
 
-              <Button className="mt-5">Sign-up</Button>
+              <Button type="submit" className="mt-5">
+                Sign-up
+              </Button>
             </div>
           </form>
         </div>
