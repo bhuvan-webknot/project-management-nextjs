@@ -22,7 +22,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import employeesData from "@/data/data";
+import employeesData from "@/data/employeeDetails";
 
 export default function EmployeePage() {
   const [cemail, setcEmail] = React.useState("bhuvan.s@webknot.in");
