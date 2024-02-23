@@ -92,7 +92,7 @@ export default function ProjectsPage() {
             <DialogHeader>
               <DialogTitle>Add project</DialogTitle>
               <DialogDescription>
-                Click save when you're done.
+                Click save when you&apos;re done.
               </DialogDescription>
             </DialogHeader>
             <div className="grid gap-4 py-4">
@@ -184,9 +184,9 @@ export default function ProjectsPage() {
                 </TableCell>
                 <TableCell>{proj.category}</TableCell>
                 <TableCell>
-                  {proj.employee.map((emp) => {
+                  {proj.employee.map((emp, index) => {
                     return (
-                      <p>
+                      <p key={index}>
                         {emp.employee_name} - {emp.role}
                       </p>
                     );
@@ -203,7 +203,7 @@ export default function ProjectsPage() {
                       <DialogHeader>
                         <DialogTitle>Edit project</DialogTitle>
                         <DialogDescription>
-                          Click save when you're done.
+                          Click save when you&apos;re done.
                         </DialogDescription>
                       </DialogHeader>
                       <div className="grid gap-4 py-4">
